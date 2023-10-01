@@ -1,0 +1,9 @@
+docker run -it --rm --mount type=bind,source=""$(pwd)/src,target=/go/src -w /go/src golang:1.21 
+
+go build hello-world.go
+
+./hello-world
+
+docker build -t marciojolima/go-smallest .
+
+docker run --rm marciojolima/go-smallest
